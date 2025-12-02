@@ -91,10 +91,5 @@ cd services/auth_service && pytest --cov=.
 - MinIO хранит медиа (логотипы оплат, изображения товаров). В dev-режиме используются локальные файловые бэкенды.
 - Frontend приложения взаимодействуют с API напрямую (на локали каждая служба доступна по своему порту). В production предполагается Traefik/Ingress с маршрутами `/auth`, `/user`, `/content`, `/catalog`.
 
-## Что дальше
-
-- Настройка Helm чарта на основе `docker-compose.yml`.
-- Добавление Playwright e2e для Next.js и админской PWA.
-- Подключение real-time обновлений через Redis Streams/NATS для мониторинга заказов.
 
 
