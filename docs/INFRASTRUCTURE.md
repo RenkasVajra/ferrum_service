@@ -53,4 +53,15 @@ Each deployment uses:
   - `traefik` as reverse proxy
 - `make up` / `make down` wrappers for parity with k3s manifests.
 
+## Dev Compose Snapshot (2025-11-26)
+- Реализован `docker-compose.yml` в корне репозитория.
+- Сервисы:
+  - `postgres`, `redis`, `minio`
+  - `auth_service`, `user_service`, `content_service`, `catalog_service`
+  - `client_web` (Next.js) и `admin_pwa` (Vite PWA)
+- Все Django-контейнеры используют общий entrypoint с миграциями и автосозданием суперпользователя.
+- Переменные окружения подтягиваются из `env.example` → `.env`.
+- Frontend контейнеры получают `NEXT_PUBLIC_*` и `VITE_*` URL-ы и автоматически ребилдятся.
+
+
 
